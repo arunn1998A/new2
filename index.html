@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Calculator</title>
+</head>
+<body>
+    <h1>Student Grade Calculator</h1>
+    <input type="number" id="markInput" placeholder="Enter the student's mark">
+    <button id="calculateGradeButton">Calculate Grade</button>
+    <p id="gradeOutput"></p>
+
+    <script>
+        // Function to calculate grade based on mark
+        function calculateGrade(mark) {
+            if (mark >= 90) {
+                return 'A+';
+            } else if (mark >= 80) {
+                return 'A';
+            } else if (mark >= 70) {
+                return 'B+';
+            } else if (mark >= 60) {
+                return 'B';
+            } else if (mark >= 50) {
+                return 'C+';
+            } else {
+                return 'Failed';
+            }
+        }
+
+        // Event listener for the button click
+        document.getElementById("calculateGradeButton").addEventListener("click", function() {
+            var mark = document.getElementById("markInput").value;
+            var grade = calculateGrade(mark);
+            document.getElementById("gradeOutput").textContent = "The student's grade is: " + grade;
+        });
+    </script>
+</body>
+</html>
